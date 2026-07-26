@@ -1,0 +1,135 @@
+/* AccessLens App Theme Variables */
+:root {
+  --al-bg: #ffffff;
+  --al-bg-secondary: #f7f7f8;
+  --al-bg-tertiary: #fafafa;
+  --al-fg: #111111;
+  --al-fg-secondary: #374151;
+  --al-fg-muted: #6b7280;
+  --al-fg-faint: #9ca3af;
+  --al-fg-ghost: #d1d5db;
+  --al-border: #e5e7eb;
+  --al-border-hover: rgba(79, 70, 229, 0.3);
+  --al-primary: #4F46E5;
+  --al-primary-hover: #4338ca;
+  --al-primary-light: rgba(79, 70, 229, 0.1);
+  --al-primary-faint: rgba(79, 70, 229, 0.05);
+  --al-sidebar-bg: #f7f7f8;
+  --al-user-bubble: #4F46E5;
+  --al-code-bg: #f7f7f8;
+  --al-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.dark {
+  --al-bg: #0f0f10;
+  --al-bg-secondary: #1a1a1e;
+  --al-bg-tertiary: #141416;
+  --al-fg: #f0f0f0;
+  --al-fg-secondary: #d1d5db;
+  --al-fg-muted: #9ca3af;
+  --al-fg-faint: #6b7280;
+  --al-fg-ghost: #4b5563;
+  --al-border: #2a2a2e;
+  --al-border-hover: rgba(79, 70, 229, 0.5);
+  --al-primary: #6366f1;
+  --al-primary-hover: #818cf8;
+  --al-primary-light: rgba(99, 102, 241, 0.15);
+  --al-primary-faint: rgba(99, 102, 241, 0.08);
+  --al-sidebar-bg: #141416;
+  --al-user-bubble: #4F46E5;
+  --al-code-bg: #1a1a1e;
+  --al-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection on interactive elements */
+button, [role="button"] {
+  user-select: none;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, textarea {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: var(--al-border);
+  border-radius: 3px;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: var(--al-fg-ghost);
+}
+
+/* Dark mode transition */
+html {
+  transition: background-color 0.2s ease;
+}
+
+/* Dark mode overrides for common utility colors used in components */
+.dark {
+  color-scheme: dark;
+}
+
+/* Background overrides */
+.dark .bg-white { background-color: var(--al-bg) !important; }
+.dark .bg-\[\#f7f7f8\] { background-color: var(--al-bg-secondary) !important; }
+.dark .bg-\[\#fafafa\] { background-color: var(--al-bg-tertiary) !important; }
+.dark .bg-\[\#f3f4f6\] { background-color: var(--al-bg-secondary) !important; }
+.dark .bg-\[\#f5f5f5\] { background-color: var(--al-bg-secondary) !important; }
+
+/* Text overrides */
+.dark .text-\[\#111111\] { color: var(--al-fg) !important; }
+.dark .text-\[\#0a0a0a\] { color: var(--al-fg) !important; }
+.dark .text-\[\#374151\] { color: var(--al-fg-secondary) !important; }
+.dark .text-\[\#6b7280\] { color: var(--al-fg-muted) !important; }
+.dark .text-\[\#9ca3af\] { color: var(--al-fg-faint) !important; }
+.dark .text-\[\#d1d5db\] { color: var(--al-fg-ghost) !important; }
+
+/* Border overrides */
+.dark .border-\[\#e5e7eb\] { border-color: var(--al-border) !important; }
+.dark .border-black\/\[0\.07\] { border-color: var(--al-border) !important; }
+.dark .border-\[\#f3f4f6\] { border-color: var(--al-border) !important; }
+
+/* Placeholder text */
+.dark .placeholder\:text-\[\#9ca3af\]::placeholder { color: var(--al-fg-faint) !important; }
+
+/* Code and pre blocks */
+.dark pre { background-color: var(--al-bg-secondary) !important; color: var(--al-fg-secondary) !important; }
+.dark code { background-color: var(--al-bg-secondary) !important; }
+
+/* Specific component backgrounds */
+.dark .hover\:bg-\[\#f7f7f8\]:hover { background-color: var(--al-bg-secondary) !important; }
+.dark .hover\:bg-white:hover { background-color: var(--al-bg-secondary) !important; }
+.dark .hover\:bg-white\/70:hover { background-color: rgba(255,255,255,0.05) !important; }
+.dark .hover\:bg-white\/60:hover { background-color: rgba(255,255,255,0.04) !important; }
+.dark .bg-white\/80 { background-color: rgba(15,15,16,0.8) !important; }
+
+/* Shadow adjustments */
+.dark .shadow-sm { box-shadow: 0 1px 2px rgba(0,0,0,0.3) !important; }
+.dark .shadow-lg { box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important; }
+
+/* Sidebar active states */
+.dark .bg-white.shadow-sm { background-color: var(--al-bg-secondary) !important; }
