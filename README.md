@@ -93,6 +93,3 @@ Go to [http://localhost:5173](http://localhost:5173) and you're in.
 - [ ] Shareable links for reviews
 - [ ] A Figma plugin version
 
-## License
-
-MIT
