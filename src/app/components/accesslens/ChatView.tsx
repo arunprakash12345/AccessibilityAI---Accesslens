@@ -186,12 +186,8 @@ export function ChatView({ messages, onMessagesChange, initialPrompt, initialFil
       />
 
       {/* Top bar */}
-      <div className="px-4 sm:px-6 py-3.5 border-b border-[#e5e7eb] flex items-center justify-between bg-white shrink-0">
+      <div className="px-4 sm:px-6 py-3.5 border-b border-[#e5e7eb] flex items-center bg-white shrink-0">
         <h2 className="text-sm font-semibold text-[#111111] pl-10 md:pl-0">{title}</h2>
-        <span className="flex items-center gap-1 text-xs text-[#6b7280]">
-          <span className={`w-1.5 h-1.5 rounded-full ${isLoading ? "bg-amber-400 animate-pulse" : "bg-emerald-400"}`} aria-hidden="true" />
-          {isLoading ? "Processing" : "Ready"}
-        </span>
       </div>
 
       {/* Messages */}
